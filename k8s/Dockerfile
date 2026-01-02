@@ -1,8 +1,21 @@
-FROM python:3.12-slim
+FROM python:3.12
 
 WORKDIR /app
 
-COPY requirements.txt .
+RUN apt-get update
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    apt-get update --fix-missing && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        gcc \
+        libffi-dev \
+        python3-dev
+
+RUN rm -rf /var/lib/apt/lists/*
+
+
+COPY requirements.txt . 
 
 RUN pip install -r requirements.txt
 

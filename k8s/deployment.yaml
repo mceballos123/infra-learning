@@ -12,13 +12,13 @@ spec:
   selector:
     matchLabels:
       app: api-server
-    template:
+  template:
       metadata:
         labels:
           app: api-server
       spec:
         containers:
           - name: api-server
-            image: api-server:v1 
+            image: gcr.io/gen-lang-client-0189309103/api-server:v1 
             ports:
-               - containerPort:8000
+               - containerPort: 8000

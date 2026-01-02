@@ -10,5 +10,5 @@ terraform {
 provider "google"{
     project = "gen-lang-client-0189309103"
     region = "us-west2"
-    zone = "us-west2-a"
+    zone = "us-west2-b"
 }
